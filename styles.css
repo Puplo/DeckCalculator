@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.table-wrapper {
+    position: relative;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.table-scroll table {
+    width: 100%;
+}
+
+.remaining-options {
+    min-height: 20px;
+    transition: visibility 0s, height 0.3s ease;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.output {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.display-4 {
+    font-size: 1.5rem;
+}
+
+.card-label {
+    min-height: 2.5rem; 
+}
+
+.form-group {
+    margin-right: 15px;
+}

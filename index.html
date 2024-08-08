@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Deck Calculator</h1>
+        <div class="table-container mt-4">
+            <h2>Heroes</h2>
+            <div class="table-wrapper">
+                <table id="player-table" class="table table-striped table-bordered">
+                    <thead class="thead-dark sticky-header">
+                        <tr>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>FAN Score</th>
+                            <th>Stars&#x1F31F;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <form id="card-form" class="mt-4">
+            <div class="form-group">
+                <label for="calculator-type">Select Calculator Type:</label>
+                <select id="calculator-type" class="form-control">
+                    <option value="18">Bronze (Max 18 &#x1F31F;)</option>
+                    <option value="22">Silver (Max 22 &#x1F31F;)</option>
+                    <option value="26">Gold (Max 26 &#x1F31F;)</option>
+                </select>
+            </div>
+            <div class="d-flex flex-column">
+                <!-- Карты -->
+                <div class="d-flex flex-row align-items-start mb-2">
+                    <div class="form-group flex-grow-1 mx-2">
+                        <label for="card1" class="d-flex align-items-center card-label">Card 1: <span id="username1" class="font-weight-bold ml-2"></span></label>
+                        <select id="card1" name="card1" class="form-control card-select">
+                            <option value="7">7 &#x1F31F;</option>
+                            <option value="6">6 &#x1F31F;</option>
+                            <option value="5">5 &#x1F31F;</option>
+                            <option value="4">4 &#x1F31F;</option>
+                            <option value="3">3 &#x1F31F;</option>
+                            <option value="2" selected>2 &#x1F31F;</option>
+                        </select>
+                        <small class="form-text text-muted remaining-options" id="remaining1"></small>
+                    </div>
+                    <div class="form-group flex-grow-1 mx-2">
+                        <label for="card2" class="d-flex align-items-center card-label">Card 2: <span id="username2" class="font-weight-bold ml-2"></span></label>
+                        <select id="card2" name="card2" class="form-control card-select">
+                            <option value="7">7 &#x1F31F;</option>
+                            <option value="6">6 &#x1F31F;</option>
+                            <option value="5">5 &#x1F31F;</option>
+                            <option value="4">4 &#x1F31F;</option>
+                            <option value="3">3 &#x1F31F;</option>
+                            <option value="2" selected>2 &#x1F31F;</option>
+                        </select>
+                        <small class="form-text text-muted remaining-options" id="remaining2"></small>
+                    </div>
+                    <div class="form-group flex-grow-1 mx-2">
+                        <label for="card3" class="d-flex align-items-center card-label">Card 3: <span id="username3" class="font-weight-bold ml-2"></span></label>
+                        <select id="card3" name="card3" class="form-control card-select">
+                            <option value="7">7 &#x1F31F;</option>
+                            <option value="6">6 &#x1F31F;</option>
+                            <option value="5">5 &#x1F31F;</option>
+                            <option value="4">4 &#x1F31F;</option>
+                            <option value="3">3 &#x1F31F;</option>
+                            <option value="2" selected>2 &#x1F31F;</option>
+                        </select>
+                        <small class="form-text text-muted remaining-options" id="remaining3"></small>
+                    </div>
+                    <div class="form-group flex-grow-1 mx-2">
+                        <label for="card4" class="d-flex align-items-center card-label">Card 4: <span id="username4" class="font-weight-bold ml-2"></span></label>
+                        <select id="card4" name="card4" class="form-control card-select">
+                            <option value="7">7 &#x1F31F;</option>
+                            <option value="6">6 &#x1F31F;</option>
+                            <option value="5">5 &#x1F31F;</option>
+                            <option value="4">4 &#x1F31F;</option>
+                            <option value="3">3 &#x1F31F;</option>
+                            <option value="2" selected>2 &#x1F31F;</option>
+                        </select>
+                        <small class="form-text text-muted remaining-options" id="remaining4"></small>
+                    </div>
+                    <div class="form-group flex-grow-1 mx-2">
+                        <label for="card5" class="d-flex align-items-center card-label">Card 5: <span id="username5" class="font-weight-bold ml-2"></span></label>
+                        <select id="card5" name="card5" class="form-control card-select">
+                            <option value="7">7 &#x1F31F;</option>
+                            <option value="6">6 &#x1F31F;</option>
+                            <option value="5">5 &#x1F31F;</option>
+                            <option value="4">4 &#x1F31F;</option>
+                            <option value="3">3 &#x1F31F;</option>
+                            <option value="2" selected>2 &#x1F31F;</option>
+                        </select>
+                        <small class="form-text text-muted remaining-options" id="remaining5"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center output">
+                <p id="total" class="font-weight-bold display-4">Total: 0/18 &#x1F31F;</p>
+                <p id="fanpoints" class="font-weight-bold display-4">Fan Score: 0</p>
+                <p id="error" class="text-danger font-weight-bold"></p>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                <button type="button" id="reset-button" class="btn btn-primary">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
